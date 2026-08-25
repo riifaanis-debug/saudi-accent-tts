@@ -1,6 +1,6 @@
 const SAMPLE_RATE = 24000;
 
-export type TtsError = { status: number; message?: string };
+export type TtsError = { status: number; message?: string | undefined };
 
 /** Splits long text at sentence boundaries into chunks safely under the model limit. */
 export function chunkForTts(text: string, maxChars = 700): string[] {
