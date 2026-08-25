@@ -29,7 +29,7 @@ export const Route = createFileRoute("/api/tts")({
         if (!text) {
           return new Response(JSON.stringify({ message: "النص فارغ" }), { status: 400 });
         }
-        if (text.length > 2400) {
+        if (text.length > 5000) {
           return new Response(JSON.stringify({ message: "النص أطول من الحد المسموح" }), {
             status: 400,
           });

@@ -20,7 +20,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { rewriteText } from "@/lib/rewrite.functions";
 import { arabicErrorMessage, pcmToWav, synthesize, type TtsError } from "@/lib/tts-client";
 
-const MAX = 2000;
+const MAX = 5000;
 
 const VOICES = [
   { id: "Puck", name: "فهد", desc: "شاب حيوي واثق" },

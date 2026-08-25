@@ -2,7 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
 const Input = z.object({
-  text: z.string().min(1).max(2000),
+  text: z.string().min(1).max(5000),
 });
 
 export type RewriteResult =
