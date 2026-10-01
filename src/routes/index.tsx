@@ -27,6 +27,7 @@ const VOICES = [
   { id: "Fenrir", name: "تركي", desc: "نبرة قوية حاسمة" },
   { id: "Orus", name: "عبدالله", desc: "هادئ رسمي مقنع" },
   { id: "Charon", name: "ناصر", desc: "دافئ ودّي واضح" },
+  { id: "Algenib", name: "سلمان", desc: "ثلاثيني رسمي جهوري" },
 ];
 
 export const Route = createFileRoute("/")({
