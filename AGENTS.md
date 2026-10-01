@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Voice-specific delivery styles are selected server-side from the validated voice ID so performance instructions cannot be supplied by the browser.
