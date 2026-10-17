@@ -28,6 +28,7 @@ const VOICES = [
   { id: "Orus", name: "عبدالله", desc: "هادئ رسمي مقنع" },
   { id: "Charon", name: "ناصر", desc: "دافئ ودّي واضح" },
   { id: "Algenib", name: "سلمان", desc: "ثلاثيني رسمي جهوري" },
+  { id: "Leda", name: "نوف", desc: "بنت عشرينية عامية بدلع" },
 ];
 
 export const Route = createFileRoute("/")({
@@ -93,7 +94,7 @@ function Index() {
 
     let script = value;
     try {
-      if (!raw) {
+      if (!raw && voice !== "Leda") {
         setStage("rewriting");
         const result = await rewrite({ data: { text: value } });
         if (!result.ok) {
