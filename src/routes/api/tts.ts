@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-const VOICES = new Set(["Puck", "Fenrir", "Orus", "Charon", "Algenib"]);
+const VOICES = new Set(["Puck", "Fenrir", "Orus", "Charon", "Algenib", "Leda"]);
 const CEREMONY_VOICE = "Algenib";
+const GIRL_VOICE = "Leda";
 
 export const Route = createFileRoute("/api/tts")({
   server: {
