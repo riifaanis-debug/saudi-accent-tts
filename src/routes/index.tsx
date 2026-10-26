@@ -251,17 +251,20 @@ function Index() {
               className="h-12 w-full text-base font-semibold"
             >
               {stage === "rewriting" ? (
-                <>
-                  <Loader2 className="size-5 animate-spin" /> جاري إعادة الصياغة…
-                </>
+                <span key="rw" className="inline-flex items-center gap-2">
+                  <Loader2 className="size-5 animate-spin" />
+                  <span>جاري إعادة الصياغة…</span>
+                </span>
               ) : stage === "speaking" ? (
-                <>
-                  <Loader2 className="size-5 animate-spin" /> جاري توليد الصوت…
-                </>
+                <span key="sp" className="inline-flex items-center gap-2">
+                  <Loader2 className="size-5 animate-spin" />
+                  <span>جاري توليد الصوت…</span>
+                </span>
               ) : (
-                <>
-                  <Mic className="size-5" /> استمع
-                </>
+                <span key="idle" className="inline-flex items-center gap-2">
+                  <Mic className="size-5" />
+                  <span>استمع</span>
+                </span>
               )}
             </Button>
           </CardContent>
