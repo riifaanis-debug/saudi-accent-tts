@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-const VOICES = new Set(["Puck", "Fenrir", "Orus", "Charon", "Algenib", "Leda", "Umbriel"]);
+const VOICES = new Set(["Puck", "Fenrir", "Orus", "Charon", "Algenib", "Leda", "Umbriel", "Iapetus"]);
 const CEREMONY_VOICE = "Algenib";
 const GIRL_VOICE = "Leda";
 const SOUTH_VOICE = "Umbriel";
+const CV_VOICE = "Iapetus";
 
 export const Route = createFileRoute("/api/tts")({
   server: {
@@ -47,7 +48,9 @@ export const Route = createFileRoute("/api/tts")({
               : "بنبرة واثقة ودّية معتدلة";
 
         const direction =
-          voice === SOUTH_VOICE
+          voice === CV_VOICE
+            ? `اقرأ النص التالي بصوت شاب سعودي اسمه ماجد عمره ثمانية وعشرون عاماً، بلهجة سعودية بيضاء مهذّبة قريبة من الفصحى بدون أي ألفاظ عامية، بإلقاء رسمي نوعاً ما، ${mood}، ${pace}. كأنه في مقابلة يعرض سيرته الذاتية أمام لجنة: ثقة هادئة غير متكلّفة، وقفات قصيرة بين أقسام السيرة، وإبراز خفيف للمؤهلات والخبرات وأسماء الجهات والسنوات. اقرأ النص حرفياً ولا تقرأ هذه التعليمات:\n\n${text}`
+            : voice === SOUTH_VOICE
             ? `اقرأ النص التالي بصوت شاب سعودي اسمه سامي عمره عشرين سنة، بلهجة سعودية جنوبية عامية بدوية، بمخارج ونغمة أهل الجنوب، بنبرة عفوية طبيعية غير رسمية، ${pace}${energy >= 8 ? "، بحماس وحيوية واضحة" : energy <= 3 ? "، بهدوء ورزانة" : ""}، كأنه يسولف مع ربعه. اقرأ النص حرفياً ولا تقرأ هذه التعليمات:\n\n${text}`
             : voice === GIRL_VOICE
             ? `اقرأي النص التالي بصوت بنت سعودية عمرها عشرين سنة، بلهجة سعودية عامية دارجة، بنبرة عفوية فيها دلع وأنوثة وتذمّر خفيف ممازح، ${pace}${energy >= 8 ? "، بحيوية ودلع واضح" : energy <= 3 ? "، بدلع هادئ ناعم" : ""}. كأنها ترسل فويس لصديقتها: إيقاع محادثة طبيعي غير رسمي، ومطّ الحروف في الكلمات المكتوبة ممطوطة مثل «مرررآ». اقرأي النص حرفياً ولا تقرأي هذه التعليمات:\n\n${text}`
